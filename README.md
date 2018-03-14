@@ -1,6 +1,7 @@
 # nge-cake-3x-xrole
 Simple blog.
 
+- Download/Clone
 - Install:
 
 ```bash
@@ -21,6 +22,8 @@ bin/cake migrations seed
 - Login:
     - username: admin 
     - password: admin
+
+---
 
 # CakePHP Application Skeleton
 
