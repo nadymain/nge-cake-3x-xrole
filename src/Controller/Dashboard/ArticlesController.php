@@ -17,7 +17,7 @@ class ArticlesController extends AppController
      * paginate
      */
     public $paginate = [
-        'limit' => 3,
+        'limit' => 10,
         'order' => ['Articles.created' => 'desc']
     ];
 
