@@ -18,12 +18,4 @@ $(function() {
 		$('.navmenu_btn').toggleClass('active');
 		$('.navmenu').toggleClass('show');
     });
-    
-    // active menu
-    $('.navmenu a').each(function() {
-        var path = location.href;
-        if (this.href === path) {
-            $(this).addClass('active');
-        }
-    });
 });

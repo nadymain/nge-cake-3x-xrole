@@ -321,7 +321,7 @@ input:focus::placeholder {
         border: none;
         height: 3rem;
     }
-    .navmenu .active {
+    .navmenu .active>a {
         color: #ff6f43
     }
 }
