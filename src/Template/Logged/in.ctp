@@ -9,8 +9,8 @@ $this->Html->meta('robots', 'noindex', [
     <?= $this->Form->create(null, ['class' => 'box_form']) ?>
     <legend>Login</legend>
 
-        <?= $this->Form->control('username') ?>
-        <?= $this->Form->control('password') ?>
+        <?= $this->Form->control('username', ['required']) ?>
+        <?= $this->Form->control('password', ['required']) ?>
         
     <?= $this->Form->button('Submit') ?>
     <?= $this->Form->end() ?>
