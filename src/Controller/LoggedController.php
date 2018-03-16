@@ -26,7 +26,6 @@ class LoggedController extends AppController
             }
 
             $this->Flash->error('Your username or password is incorrect.');
-            $this->request->data['password'] = '';
         }
 
         if ($this->Auth->user('id')) {
