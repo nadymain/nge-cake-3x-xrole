@@ -36,7 +36,6 @@ class AppView extends View
      */
     public function initialize()
     {
-        $this->loadHelper('MymainMenu');
         $this->loadHelper('MyMenu');
         $this->loadHelper('MyUpdate');
     }
