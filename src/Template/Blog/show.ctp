@@ -7,12 +7,14 @@ if ($article->description) {
         ['block' => 'meta']
     );
 }
+
 $this->Html->meta(
     'canonical', 
     $this->Url->build('/blog/', true) . $article->slug, 
     ['rel' => 'canonical', 'type' => null, 'title' => null, 'block' => 'meta']
 );
-$parsedown = new Parsedown();
+
+$parsedown = new App\Markdown\Extension();
 ?>
 
 <article class="article clear">
