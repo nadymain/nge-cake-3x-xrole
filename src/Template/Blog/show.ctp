@@ -14,7 +14,7 @@ $this->Html->meta(
     ['rel' => 'canonical', 'type' => null, 'title' => null, 'block' => 'meta']
 );
 
-$parsedown = new App\Markdown\Extension();
+$parsedown = new ParsedownExtra();
 ?>
 
 <article class="article clear">

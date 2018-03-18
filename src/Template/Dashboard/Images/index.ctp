@@ -63,7 +63,7 @@ $this->assign('title', 'Images');
                 </td>
                 <td>
                     <?= $this->Html->link(__('Copy'), '#',
-                        ['data-url' => '![alt](uploads/'. $image->dir .'/'. $image->file .')', 'class' => 'btn copy']
+                        ['data-url' => '![alt](../img/uploads/'. $image->dir .'/'. $image->file .')', 'class' => 'btn copy']
                     ) ?>
                     <?= $this->Form->postLink(__('Delete'),
                         ['action' => 'delete', $image->id], 
