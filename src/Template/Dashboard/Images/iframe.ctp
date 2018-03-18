@@ -6,7 +6,7 @@
         <span><?= __('Index') ?></span>
         <?= __('Images') ?>
     </h1>
-    <a href="<?= $this->Url->build('/dashboard/images/addiframe', true) ?>">
+    <a href="<?= $this->Url->build('/dashboard/images/addiframe?type='. $this->request->getQuery('type'), true) ?>">
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
             <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/>
         </svg>
@@ -16,18 +16,21 @@
 <div class="main_middle main_middle_image clear">
     <div class="status">
         <?= $this->Html->link('All (' . $total . ')', 
-            ['action' => 'iframe'],
+            ['action' => 'iframe?type='. $this->request->getQuery('type')],
             ['class' => (!$this->request->getQuery()) ? 'active' : 'inactive'] 
         ); ?>
     </div>
     
     <?php
         echo $this->Form->create(null, ['valueSources' => 'query']);
-            echo $this->Form->input('filter', [
-                'placeholder' => 'File...',
-                'templates' => ['inputContainer' => '{{content}}'],
-                'label' => false
-            ]);
+        echo $this->Form->input('type', [
+            'type' => 'hidden'
+        ]);
+        echo $this->Form->input('filter', [
+            'placeholder' => 'File...',
+            'templates' => ['inputContainer' => '{{content}}'],
+            'label' => false
+        ]);
         echo $this->Form->button('Filter', ['type' => 'submit']);
         echo $this->Form->end();
     ?>
@@ -50,9 +53,15 @@
                     ) ?>
                 </td>
                 <td>
-                    <?= $this->Html->link(__('Select'), '#',
-                        ['data-url' =>  'uploads/'.$image->dir.'/'.$image->file, 'class' => 'btn select']
-                    ) ?>
+                    <?php if ($this->request->query('type') === 'editor') : ?>
+                        <?= $this->Html->link(__('Copy'), '#',
+                            ['data-url' => '![alt](../img/uploads/'.$image->dir.'/'.$image->file.' "title"){.class}', 'class' => 'btn copy']
+                        ) ?>
+                    <?php else : ?>
+                        <?= $this->Html->link(__('Select'), '#',
+                            ['data-url' =>  'uploads/'.$image->dir.'/'.$image->file, 'class' => 'btn select']
+                        ) ?>
+                    <?php endif ?>
                     <?= $this->Form->postLink(__('Delete'), 
                         ['action' => 'delete', $image->id], 
                         ['class' => 'btn', 'confirm' => __('Are you sure you want to delete # {0}?', $image->id)]
@@ -73,6 +82,17 @@
 
 <?php $this->start('inline'); ?>
 <script>
+    // copy
+    $('.copy').on("click", function(e){
+        e.preventDefault();
+        var $url = $(this).data('url');
+        var $temp = $("<input>");
+        $("body").append($temp);
+        $temp.val($url).select();
+        document.execCommand("copy");
+        $temp.remove();
+        parent.$.modal.close();
+    });
 
     // select
     var base_img = '<?= $this->Url->build('/img/', true) ?>';

@@ -12,7 +12,7 @@ $this->Html->meta(
     $this->Url->build('/info/', true) . $info->slug, 
     ['rel' => 'canonical', 'type' => null, 'title' => null, 'block' => 'meta']
 );
-$parsedown = new Parsedown();
+$parsedown = new ParsedownExtra();
 ?>
 
 <article class="article clear">
@@ -30,7 +30,7 @@ $parsedown = new Parsedown();
             ]); ?>
         </h2>
     </header>
-    <div class="article_content">
+    <div class="article_content clear">
         <?= $parsedown->text($info->content) ?>
     </div>
     <?php if ($this->request->session()->read('Auth.User')) {

@@ -35,7 +35,7 @@ $parsedown = new ParsedownExtra();
             <?= h($article->created) ?>
         </div>
     </header>
-    <div class="article_content">
+    <div class="article_content clear">
         <?= $parsedown->text($article->content) ?>
     </div>
     <footer>

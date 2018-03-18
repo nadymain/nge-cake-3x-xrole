@@ -33,7 +33,7 @@ $this->assign('title', 'Edit Info');
         echo $this->Form->control('content', [
             'class' => 'hidden',
             'label' => 'Content Markdown',
-            'templateVars' => ['editor' => '<div id="editor"></div>']
+            'templateVars' => ['editor' => '<div class="editor_top"><a class="editor_btnimage" href="#modal-image">Image</a></div><div id="editor"></div>']
         ]);
         echo $this->Form->control('description', ['rows' => 3]);
         echo $this->Form->control('image', [
@@ -90,6 +90,12 @@ $(function() {
     $('.btn_image').on('click', function(e){
         e.preventDefault();
         $('#modal-image').find('.content').html('<iframe src="' + base_url + 'dashboard/images/iframe?type=modal"></iframe>');
+        $(this).modal();
+    });
+
+    $('.editor_btnimage').on('click', function(e){
+        e.preventDefault();
+        $('#modal-image').find('.content').html('<iframe src="' + base_url + 'dashboard/images/iframe?type=editor"></iframe>');
         $(this).modal();
     });
 

@@ -486,7 +486,29 @@ input[type="radio"] {
 }
 
 .form #editor {
-    min-height: 25rem;
+    min-height: 27.5rem;
+}
+
+.form .editor_top{
+    text-align: right;
+    background-color: #ffab91;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+}
+
+.form .editor_btnimage {
+    display: inline-block;
+    padding: 0 0.75rem;
+    color: #fff;
+}
+
+.form .editor_btnimage:hover {
+    color: #fff3e0;
+}
+
+.form .editor_btnimage:focus {
+    color: #fff;
+    background-color: #ff8a65;
 }
 
 .form .input {

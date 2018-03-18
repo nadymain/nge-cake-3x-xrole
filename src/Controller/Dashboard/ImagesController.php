@@ -135,7 +135,7 @@ class ImagesController extends AppController
             if ($this->Images->save($image)) {
                 $this->Flash->success(__('The image has been saved.'));
 
-                return $this->redirect(['action' => 'iframe']);
+                return $this->redirect(['action' => 'iframe?type='. $this->request->getQuery('type')]);
             }
             $this->Flash->error(__('The image could not be saved. Please, try again.'));
         }
