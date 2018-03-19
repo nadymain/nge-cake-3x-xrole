@@ -39,10 +39,16 @@ In eu enim eget nisl euismod aliquet. Orci varius natoque penatibus et
 magnis dis parturient montes, nascetur ridiculus mus. 
 Vivamus ultrices enim risus, vitae blandit velit hendrerit a. 
 
+![alt](https://dummyimage.com/100x100/ff6f43/fff){.fleft}
+![alt](https://dummyimage.com/100x100/ff6f43/fff){.fright}
 Mauris ante elit, finibus a vulputate non, dapibus nec nisl. 
 Praesent in ex velit. Donec finibus gravida consequat.
 Quisque hendrerit non ligula ac varius. Morbi ac sodales ligula. 
 Donec non maximus elit. Nunc dictum ac tellus sed finibus. 
+In eu enim eget nisl euismod aliquet. Orci varius natoque penatibus et 
+magnis dis parturient montes, nascetur ridiculus mus. 
+Vivamus ultrices enim risus, vitae blandit velit hendrerit. Duis ultricies nisl 
+lectus, scelerisque augue mattis id. Suspendisse a scelerisque urna.
 
 ### H3
 

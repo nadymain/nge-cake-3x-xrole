@@ -1,4 +1,4 @@
-<?php $parsedown = new Parsedown() ?>
+<?php $parsedown = new ParsedownExtra() ?>
 
 <?php if (!$articles->isEmpty()) : ?>
     <?php foreach ($articles as $article): ?>

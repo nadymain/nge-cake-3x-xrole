@@ -1,5 +1,5 @@
 <?php
-$parsedown = new Parsedown();
+$parsedown = new ParsedownExtra();
 
 $this->set('channelData', [
     'title' => __("Articles Feed"),
