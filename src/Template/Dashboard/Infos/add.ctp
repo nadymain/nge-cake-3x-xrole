@@ -63,7 +63,7 @@ $(function() {
     var editor = ace.edit('editor');
     var textarea = $('textarea[name="content"]');
     editor.session.setMode("ace/mode/markdown");
-    editor.session.setValue($("#content").val());
+    editor.session.setValue(textarea.val());
     editor.session.on("change", function () {
         textarea.val(editor.getValue());
     });
